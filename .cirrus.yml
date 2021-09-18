@@ -30,7 +30,7 @@ stable_auth_db_task:
     folder: $CARGO_HOME/registry
     fingerprint_script: cargo update && cat Cargo.lock
   env:
-      OXIDE_REDIS_DSN: redis://redis/3
+      OXIDE_REDIS_DSN: redis://localhost:6379/3
   build_script: cargo build -p "oxide-auth-db" --examples
   test_script: cargo test -p "oxide-auth-db"
   before_cache_script: rm -rf $CARGO_HOME/registry/index
@@ -74,7 +74,7 @@ nightly_auth_db_task:
     folder: $CARGO_HOME/registry
     fingerprint_script: cargo update && cat Cargo.lock
   env:
-    OXIDE_REDIS_DSN: redis://redis/3
+    OXIDE_REDIS_DSN: redis://localhost:6379/3
   build_script: cargo build -p "oxide-auth-db" --examples
   test_script: cargo test -p "oxide-auth-db"
   before_cache_script: rm -rf $CARGO_HOME/registry/index
