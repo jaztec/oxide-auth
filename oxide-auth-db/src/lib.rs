@@ -14,3 +14,10 @@ fn requires_redis_and_should_skip() -> bool {
         },
     }
 }
+
+fn redis_hostname() -> String {
+    match std::env::var("OXIDE_REDIS_HOSTNAME") {
+        Err(_) => "redis://localhost/3".parse().unwrap(),
+        Ok(st) => st
+    }
+}

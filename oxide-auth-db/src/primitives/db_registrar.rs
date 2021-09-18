@@ -239,7 +239,7 @@ mod tests {
         }
 
         let mut oauth_service = DBRegistrar::new(
-            "redis://localhost/3".parse().unwrap(),
+            crate::redis_hostname(),
             32,
             "client:".parse().unwrap(),
         )
