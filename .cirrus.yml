@@ -91,3 +91,4 @@ doc_task:
   container:
     image: rustlang/rust:nightly
   script: cargo doc --no-deps --document-private-items --all-features
+
